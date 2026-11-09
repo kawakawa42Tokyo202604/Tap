@@ -1,0 +1,9 @@
+*.pdf
+en.subject.txt
+/protocol-rfc.html
+/rfc.tar.gz
+/TheAgentProtcol.ja.md
+/saves/
+/server
+/cli
+/bin/
