@@ -38,6 +38,7 @@ run-client-gui:
 
 test:
 	$(GO) test -timeout 30s ./cmd/server ./cmd/cli
+	$(GO) test -tags ci -timeout 30s ./cmd/gui
 
 lint:
 	@unformatted="$$(gofmt -l cmd)"; \

@@ -59,6 +59,14 @@ Checks connection handling, duplicate names, invalid commands, split/coalesced T
 - Queues outgoing messages per client to limit the impact of slow connections.
 - The GUI includes maps, dialogue, combat views, and illustrations.
 
+### Tests
+
+```sh
+make test
+```
+
+`make test` checks the server, CLI, and GUI. GUI tests use Fyne’s headless `ci` driver to verify protocol messages, JSON responses, world data, embedded images, and status-bar rendering without X11 or OpenGL. Opening and interacting with a real desktop window is a separate manual check.
+
 ## 日本語
 
 複数のプレイヤーが同じ世界に接続して遊ぶ、Go製のテキストアドベンチャーです。ギリシャ神話を題材にした部屋を移動し、アイテムを集め、登場人物と会話して戦闘やクエストを進めます。
@@ -117,3 +125,11 @@ make lint
 - 接続ごとの処理をgoroutineで並行に動かし、複数人の共有データはMutexで同時更新を防ぎます。
 - 各クライアントへの送信をキューに分け、遅い接続の影響を抑えます。
 - GUIにはマップ、会話、戦闘などの表示とイラストを用意しています。
+
+### テスト
+
+```sh
+make test
+```
+
+`make test` はサーバー・CLI・GUIを検証します。GUIはFyneの `ci` ドライバを使い、X11やOpenGLなしで通信・JSON応答・世界データ・埋込画像・ステータスバーを確認します。実際のデスクトップでのウィンドウ操作は別途確認します。
